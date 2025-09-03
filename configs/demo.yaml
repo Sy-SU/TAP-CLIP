@@ -24,3 +24,7 @@ persistent_workers: true
 
 # test.py 专用：想检查多少个 batch
 batches: 2
+
+# 指定预训练的 CLIP 模型
+clip_dir: checkpoints/clip-vit-b-16
+prompt_template: "a photo of a {}"
