@@ -1,0 +1,26 @@
+# configs/demo.yaml
+# 最小可用演示，所有键都与 get_dataloaders(...) 的参数同名
+name: officehome             # 或 domainnet / generic
+root: data/OfficeHome   # ← 改成你的实际路径（Windows 记得用引号）
+
+# 可选：指定训练/测试域；不写则默认全域
+train_domains: [Art]
+test_domains: [Clipart]
+
+# 图像&加载器
+input_size: 224
+batch_size: 8
+num_workers: 8
+
+# 划分与采样
+val_ratio: 0.1              # 设为 0.0 则不切 val
+fewshot_k: null             # 或 16（按类 K-shot），null 表示不用
+
+# 其它
+use_clip_norm: true
+seed: 42
+pin_memory: true
+persistent_workers: true
+
+# test.py 专用：想检查多少个 batch
+batches: 2
